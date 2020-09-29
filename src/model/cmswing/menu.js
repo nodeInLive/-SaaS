@@ -38,10 +38,14 @@ module.exports = class extends think.Model {
               nmenu.push(m);
             }
           }
+          // 如果该栏目下没有节点，则不显示分组
+          if(nmenu.length != 0) arr[v] = arr_to_tree(nmenu, 0);;
+          
         } else {
           nmenu = menu;
+          arr[v] = arr_to_tree(nmenu, 0);
         }
-        arr[v] = arr_to_tree(nmenu, 0);
+        // arr[v] = arr_to_tree(nmenu, 0);
       }
     }
 
